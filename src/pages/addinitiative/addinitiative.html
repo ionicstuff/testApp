@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="pc-header" style="margin-bottom:0px;">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Create Initiative
+    </ion-title>
+    
+    <ion-buttons end>
+      <button ion-button>
+        <ion-icon name="globe"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-select [(ngModel)]="categories" interface="popover">
+      <ion-option value="nes">Culture & Recreation</ion-option>
+      <ion-option value="nes">Education</ion-option>
+      <ion-option value="nes">Environment</ion-option>
+      <ion-option value="nes">Municiple Services</ion-option>
+      <ion-option value="nes">Parking & Transportation</ion-option>
+      <ion-option value="nes">Planning & Permits</ion-option>
+      <ion-option value="nes">Public Safety</ion-option>
+      <ion-option value="nes">Taxes & Economy</ion-option>
+      <ion-option value="nes">Other</ion-option>
+      
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Initiative Summary</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Explanation  </ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating># of Votes</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Addressee</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Action Group</ion-label>
+    <ion-select [(ngModel)]="actionGroup" interface="popover">
+      <ion-option value="nes">Select or Create Action Group (Optional)</ion-option>
+      <ion-option value="nes">Create Action Group </ion-option>      
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Adinistrator</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  
+    
+  <ion-buttons>
+    <button ion-button left class="icon-btn">
+      <ion-icon name="camera"></ion-icon> <span class="addMedia">Add Photos</span>
+    </button>
+  </ion-buttons>
+
+  <ion-buttons>
+    <button ion-button end class="icon-btn">
+      <ion-icon name="videocam"></ion-icon> <span class="addMedia">Add Video</span>
+    </button>
+  </ion-buttons>
+  
+  <button ion-button full class="margin-top-sm" color="secondary-pc" (click)="addInitiative();">Submit</button>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-menu side="left" [content]="content">
+    <ion-header>
+        <ion-toolbar color="pc-header">
+            <ion-title>Planetcivic</ion-title>
+            
+        </ion-toolbar>
+    </ion-header>        
+    <ion-content padding>
+    <ion-item>
+        <ion-label> Montclair</ion-label>
+        <ion-toggle style="border:0px!important;" checked="true"></ion-toggle>
+    </ion-item>
+        <ion-list>
+          <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" style="font-size:14px;">
+            <ion-icon [name]="p.icon" item-left style="zoom:0.8" class="pcGray"></ion-icon>{{ p.title }}
+          </button>
+            
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-menu side="right" [content]="content">
+    <ion-header>
+        <ion-toolbar color="pc-header">
+            <ion-title>Categories</ion-title>
+            
+        </ion-toolbar>
+    </ion-header>        
+    <ion-content padding>
+   
+        <ion-list>
+          <button menuClose ion-item *ngFor="let c of categories" style="font-size:14px;">
+            {{ c.title }}
+          </button>
+            
+        </ion-list>
+    </ion-content>
+</ion-menu> 
+<ion-nav [root]="rootPage" #content></ion-nav>

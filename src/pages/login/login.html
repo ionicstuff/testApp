@@ -1,0 +1,32 @@
+
+
+
+<ion-content padding class="loginBG">
+
+    <div text-center>
+        <img src="assets/imgs/newlogo.png"  alt="pclogo" width="35%">
+    </div>
+    
+    <ion-list class="loginForm">
+        
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+          </ion-item>
+
+          <button ion-button full class="margin-top-sm" color="light" (click)="login(this.userData)">Login Here</button>
+          <button ion-button icon-left full>
+              <ion-icon name="logo-facebook"></ion-icon>
+              Sign in with facebook
+            </button>
+
+            <p style="color:white;" text-center>Not a member yet ? <a href="#" (click)="signin()">Sign Up</a> </p>
+        
+        </ion-list>
+
+</ion-content>

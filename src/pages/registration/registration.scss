@@ -1,0 +1,28 @@
+page-registration {
+
+    .loginBG{
+        
+                background-image: url("../assets/imgs/headerBg.jpg");
+                background-size: cover;
+                position: relative;
+                width: 100%;
+                text-align: center;
+                background-position: center;
+            }
+
+            .landing-text{
+                color: white;
+                
+            }
+            .item-complex .item-content, .item{
+                background-color: transparent !important;
+            }
+            .margin-top-bg{
+
+                margin-top: 20px;
+            }
+            .signupForm{
+                margin-top: 50px;
+            }
+
+}

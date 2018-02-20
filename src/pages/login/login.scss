@@ -1,0 +1,22 @@
+page-login {
+
+    .margin-top-sm{
+        margin-top: 30px;
+    }
+
+    .loginBG{
+
+        background-image: url("../assets/imgs/headerBg.jpg");
+        background-size: cover;
+    }
+
+    .item-complex .item-content, .item{
+        background-color: transparent !important;
+    }
+    .loginForm{
+        margin-top: 80px;
+    }
+    
+    
+
+}

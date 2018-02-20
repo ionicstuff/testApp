@@ -1,0 +1,36 @@
+<ion-content padding class="loginBG">
+    <div text-center>
+        <img src="assets/imgs/newlogo.png"  alt="pclogo">
+    </div>
+    
+    <ion-list class="signupForm">
+        
+          <ion-item>
+            <ion-label floating>Full Name</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Confirm Email</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Address</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          
+
+          <button ion-button full class="margin-top-bg" color="light" (click)="signup()">Sign Up</button>
+          
+
+            <p style="color:white;" text-center>Already a member ? <a href="#" (click)="login()">Sign In</a> </p>
+        
+        </ion-list>
+</ion-content>

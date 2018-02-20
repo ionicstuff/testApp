@@ -1,0 +1,40 @@
+page-comments {
+
+    h2{
+        font-size: 14px !important;
+    }
+    p{
+        font-size: 12px !important;
+        color: black !important;
+    }
+
+    .pcGreen{
+        color: #019f83;
+    }
+    .pcGreen a{
+      text-decoration: none;
+      color: #019f83;
+    }
+
+    .margin-right-sm{
+        margin-right: 10px;
+    }
+    .margin-left-sm{
+      margin-left: 10px;
+  }
+  .actionRow a{
+      font-size: 12px;
+      text-decoration: none;
+      color: black;
+  }
+  .closeButton{
+      font-size: 10px;
+  }
+  .item-inner{
+      border-bottom: 0px !important;
+  }
+  ion-label{
+    white-space: normal !important;
+  }
+
+}
