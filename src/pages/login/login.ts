@@ -22,8 +22,8 @@ export class LoginPage {
   userData = {"username":"", "password":""};
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams, 
+    public navCtrl: NavController,
+    public navParams: NavParams,
     public authServiceProvider: AuthServiceProvider
   ){}
 
@@ -37,13 +37,13 @@ export class LoginPage {
     //API Document here
     this.authServiceProvider.postData(this.userData, "login").then((result)=>{
     this.responseData = result;
-    //console.log(this.responseData);
+    console.log(this.responseData);
     localStorage.setItem('userData', JSON.stringify(this.responseData))
-    this.navCtrl.push(HomePage);
+    //this.navCtrl.push(HomePage);
   }, (err)=>{
     //Connection failed or something like that
   })
-    
+
   }
 
   signin(){
