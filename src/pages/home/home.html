@@ -31,10 +31,10 @@
         <ion-segment-button value="ranked">
             Ranked
             <ion-select [(ngModel)]="gaming" interface="popover">
-                <ion-option value="nes" selected>Most Votes Overall</ion-option>
+                <ion-option value="nes" selected>Most Votes Overall by noddy</ion-option>
                 <ion-option value="n64">Most Votes For</ion-option>
                 <ion-option value="ps">Most Votes Against</ion-option>
-                
+
               </ion-select>
         </ion-segment-button>
       </ion-segment>
@@ -43,7 +43,7 @@
 </ion-header>
 
 <ion-content padding>
-    
+
   <div [ngSwitch]="latest">
       <ion-list *ngSwitchCase="'latest'">
         <ion-row *ngFor="let initiative of initiativelist">
@@ -56,12 +56,12 @@
           </ion-col>
           <ion-col col-12>
             <span class="initiative-subtitle">
-              <strong><span class="pcGray">Category:</span> </strong>{{initiative.catname}} 
+              <strong><span class="pcGray">Category:</span> </strong>{{initiative.catname}}
               <span class="pcGreen">By {{initiative.fullname}} </span>
               <span style="margin-left:10px;" class="pcGray">{{initiative.createddate}} </span>
             </span>
           </ion-col>
-          
+
           <ion-col col-12>
             <img  *ngIf="initiative.paths!=''" class="initiative-img" src="assets/imgs/imagelib.png" alt="Add a mirror to Woodland">
           </ion-col>
@@ -77,9 +77,9 @@
           </ion-col>
         </ion-row>
         <hr>
-        
+
       </ion-list>
-  
+
       <ion-list *ngSwitchCase="'archived'">
         <ion-row>
           <ion-col col-12>
@@ -110,7 +110,7 @@
           </ion-col>
         </ion-row>
       </ion-list>
-  
+
       <ion-list *ngSwitchCase="'ranked'">
         <ion-row>
           <ion-col col-12>
@@ -145,5 +145,5 @@
     <ion-fab bottom right>
       <button ion-fab color="pc-header" mini (click)="addInitiative();"><ion-icon name="add"></ion-icon></button>
     </ion-fab>
-      
+
 </ion-content>
