@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RegistrationPage } from '../registration/registration';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
@@ -24,7 +24,8 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public authServiceProvider: AuthServiceProvider
+    public authServiceProvider: AuthServiceProvider,
+    private toastCtrl:ToastController
   ){}
 
   ionViewDidLoad() {
@@ -33,17 +34,37 @@ export class LoginPage {
 
   login(){
 
-    let userData: any;
-    //API Document here
-    this.authServiceProvider.postData(this.userData, "login").then((result)=>{
-    this.responseData = result;
-    console.log(this.responseData);
-    localStorage.setItem('userData', JSON.stringify(this.responseData))
-    //this.navCtrl.push(HomePage);
-  }, (err)=>{
-    //Connection failed or something like that
-  })
+    if(this.userData.username && this.userData.password){
 
+      //API Document here
+      this.authServiceProvider.postData(this.userData, "login").then((result)=>{
+      this.responseData = result;
+      console.log(this.responseData);
+      if(this.responseData.userlist){
+      localStorage.setItem('userData', JSON.stringify(this.responseData));
+      //console.log(this.responseData.status);    
+      this.navCtrl.push(HomePage);
+      }
+      else{
+        this.presentToast("Please give valid username and password");
+      }
+    }, (err)=>{
+      //Connection failed or something like that
+    })
+    
+    }
+    else{
+      this.presentToast("Give username and password");
+     }
+  
+
+  }
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
   }
 
   signin(){
